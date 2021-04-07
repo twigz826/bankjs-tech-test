@@ -15,7 +15,7 @@ class Account {
     this._transactionHistory.push(`${date} || ${amount.toFixed(2)} || || ${this.balance.toFixed(2)}\n`);
   }
 
-  withdraw(amount, date = this.date.dateCorrectFormat()) {
+  withdraw(amount, date = this.date.correctFormat()) {
     this._deductFromBalance(amount);
     this._transactionHistory.push(`${date} || || ${amount.toFixed(2)} || ${this.balance.toFixed(2)}\n`);
   }

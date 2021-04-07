@@ -10,14 +10,16 @@ class Account {
     this.date = new TransactionDate();
   }
 
-  deposit(amount, date = this.date.correctFormat()) {
+  deposit(amount) {
+    let dateOfDeposit = this.date.correctFormat();
     this._addToBalance(amount);
-    this._transactionHistory.push(`${date} || ${amount.toFixed(2)} || || ${this.balance.toFixed(2)}\n`);
+    this._transactionHistory.push(`${dateOfDeposit} || ${amount.toFixed(2)} || || ${this.balance.toFixed(2)}\n`);
   }
 
   withdraw(amount, date = this.date.correctFormat()) {
+    let dateOfWithdrawal = this.date.correctFormat();
     this._deductFromBalance(amount);
-    this._transactionHistory.push(`${date} || || ${amount.toFixed(2)} || ${this.balance.toFixed(2)}\n`);
+    this._transactionHistory.push(`${dateOfWithdrawal} || || ${amount.toFixed(2)} || ${this.balance.toFixed(2)}\n`);
   }
 
   printAccountStatement() {

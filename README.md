@@ -50,16 +50,16 @@ The app can be run from the console in the browser
 account = new Account()
 ```
 
-#### Make a deposit including the date of deposit
+#### Make a deposit including the date of deposit (if no date is provided, the default value will be today's date)
 
 ```
-$ account.deposit("01/02/2021", 500);
+$ account.deposit(500, "01/02/2021");
 ```
 
-#### Make a withdrawal including the date of withdrawal
+#### Make a withdrawal including the date of withdrawal (if no date is provided, the default value will be today's date)
 
 ```
-$ account.withdraw("09/02/2021", 100);
+$ account.withdraw(100, "09/02/2021");
 ```
 
 #### Check the current balance on the account
@@ -76,21 +76,21 @@ $ account.printBankStatement();
 
 ## How to run the tests
 
-The project uses jasmine to test the code base, there are 11 tests that can be run through the following command:
+The project uses jasmine to test the code base, the tests can be run through the following command:
 
 ```
-$ open SpecRunner.html
+$ jasmine
 ```
 
 To include the test coverage, run the following command:
 
 ```
-$ karma start karma-config.js
+TO-DO
 ```
 
 ### Tech stack
 
-The application was written in javascript, with Jasmine as the testing framework and Karma being used to assess the test coverage. ESlint was the linter of choice.
+The application was written in javascript, with Jasmine as the testing framework.
 
 ### Design
 

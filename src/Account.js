@@ -1,12 +1,12 @@
 'use strict';
 
 const TransactionDate = require('./TransactionDate.js');
+const PrintStatement = require('./PrintStatement.js');
 
 class Account {
   constructor() {
     this.balance = 0;
     this._transactionHistory = [];
-    this.statementHeader = "date || credit || debit || balance\n";
     this.date = new TransactionDate();
   }
 
@@ -22,11 +22,17 @@ class Account {
     this._transactionHistory.push(`${dateOfWithdrawal} || || ${amount.toFixed(2)} || ${this.balance.toFixed(2)}\n`);
   }
 
-  printAccountStatement() {
+  printStatement() {
     let reversedHistory = this._transactionHistory.reverse();
-    let draftStatement = [this.statementHeader].concat(reversedHistory).join("");
-    return draftStatement;
+    console.log("IN PRINT STATEMENT");
+    console.log(reversedHistory);
+    return new PrintStatement(reversedHistory)
   }
+
+  // printAccountStatement() {
+  //   let draftStatement = [this.statementHeader].concat(reversedHistory).join("");
+  //   return draftStatement;
+  // }
 
   _deductFromBalance(amount) {
     this.balance -= amount;

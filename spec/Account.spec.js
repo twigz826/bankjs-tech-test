@@ -74,23 +74,23 @@ describe("Account", function() {
   describe('printBankStatement', function(){
 
     it("client can print an empty bank statement", function(){
-      expect(account.printAccountStatement()).toEqual("date || credit || debit || balance\n");
+      expect(account.printStatement()).toEqual("date || credit || debit || balance\n");
     })
 
     it("client deposit gets added to the bank statement", function(){
       account.deposit(500);
-      expect(account.printAccountStatement()).toEqual(`date || credit || debit || balance\n${testDate()} || 500.00 || || 500.00\n`);
+      expect(account.printStatement()).toEqual(`date || credit || debit || balance\n${testDate()} || 500.00 || || 500.00\n`);
     })
 
     it("client withdrawal gets added to the bank statement", function(){
       account.withdraw(1000);
-      expect(account.printAccountStatement()).toEqual(`date || credit || debit || balance\n${testDate()} || || 1000.00 || -1000.00\n`);
+      expect(account.printStatement()).toEqual(`date || credit || debit || balance\n${testDate()} || || 1000.00 || -1000.00\n`);
     })
 
     it("a mix of deposits and withdrawals can be added to the bank statement", function(){
       account.deposit(8517.22);
       account.withdraw(2399.78);
-      expect(account.printAccountStatement()).toEqual(`date || credit || debit || balance\n${testDate()} || || 2399.78 || 6117.44\n07/04/2021 || 8517.22 || || 8517.22\n`);
+      expect(account.printStatement()).toEqual(`date || credit || debit || balance\n${testDate()} || || 2399.78 || 6117.44\n07/04/2021 || 8517.22 || || 8517.22\n`);
     })
 
   })

@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "jasmine": "^3.7.0"
+  },
+  "devDependencies": {
+    "jasmine-spec-reporter": "^6.0.0"
   }
 }

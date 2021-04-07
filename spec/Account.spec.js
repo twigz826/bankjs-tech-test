@@ -36,8 +36,8 @@ describe("Account", function() {
     it("client can make multiple deposits that are stored in creditHistory", function(){
       account.deposit(500.67, "01/02/2021");
       account.deposit(1000.25, "11/02/2021");
-      expect(account._transactionHistory[0]).toEqual("11/02/2021 || 1000.25 || || 1500.92\n");
-      expect(account._transactionHistory[1]).toEqual("01/02/2021 || 500.67 || || 500.67\n");
+      expect(account._transactionHistory[0]).toEqual("01/02/2021 || 500.67 || || 500.67\n");
+      expect(account._transactionHistory[1]).toEqual("11/02/2021 || 1000.25 || || 1500.92\n");
     })
 
     it("default date is today if no date provided", function(){
@@ -57,8 +57,8 @@ describe("Account", function() {
     it("client can make multiple withdrawals that are stored in creditHistory", function(){
       account.withdraw(500, "01/02/2020");
       account.withdraw(1000, "11/02/2020");
-      expect(account._transactionHistory[0]).toEqual("11/02/2020 || || 1000.00 || -1500.00\n");
-      expect(account._transactionHistory[1]).toEqual("01/02/2020 || || 500.00 || -500.00\n");
+      expect(account._transactionHistory[0]).toEqual("01/02/2020 || || 500.00 || -500.00\n");
+      expect(account._transactionHistory[1]).toEqual("11/02/2020 || || 1000.00 || -1500.00\n");
     })
   })
 

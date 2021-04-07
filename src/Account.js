@@ -12,16 +12,17 @@ class Account {
 
   deposit(amount, date = this.date.correctFormat()) {
     this._addToBalance(amount);
-    this._transactionHistory.unshift(`${date} || ${amount.toFixed(2)} || || ${this.balance.toFixed(2)}\n`);
+    this._transactionHistory.push(`${date} || ${amount.toFixed(2)} || || ${this.balance.toFixed(2)}\n`);
   }
 
   withdraw(amount, date = this.date.dateCorrectFormat()) {
     this._deductFromBalance(amount);
-    this._transactionHistory.unshift(`${date} || || ${amount.toFixed(2)} || ${this.balance.toFixed(2)}\n`);
+    this._transactionHistory.push(`${date} || || ${amount.toFixed(2)} || ${this.balance.toFixed(2)}\n`);
   }
 
   printAccountStatement() {
-    let draftStatement = [this.statementHeader].concat(this._transactionHistory).join("");
+    let reversedHistory = this._transactionHistory.reverse();
+    let draftStatement = [this.statementHeader].concat(reversedHistory).join("");
     return draftStatement;
   }
 

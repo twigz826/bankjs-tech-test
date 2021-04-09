@@ -38,40 +38,49 @@ Go to the root directory of the cloned repo and install the required Node packag
 $ npm install
 ```
 
-The app can be run from the console in the browser
+Run node to run the app from the command line
+```
+$ node
+```
 
 
 ## Setting up an account
+
+#### Require the Account script in the console
+
+```
+> const Account = require('./src/account');
+```
 
 #### Create an instance of the Account Class
 
 
 ```
-account = new Account()
+> myAccount = new Account();
 ```
 
-#### Make a deposit including the date of deposit (if no date is provided, the default value will be today's date)
+#### Make a deposit
 
 ```
-$ account.deposit(500, "01/02/2021");
+> myAccount.deposit(500);
 ```
 
-#### Make a withdrawal including the date of withdrawal (if no date is provided, the default value will be today's date)
+#### Make a withdrawal
 
 ```
-$ account.withdraw(100, "09/02/2021");
+> myAccount.withdraw(200);
 ```
 
 #### Check the current balance on the account
 
 ```
-$ account.balance;
+> myAccount.balance;
 ```
 
 #### Print an account statement
 
 ```
-$ account.printBankStatement();
+> myAccount.printStatement();
 ```
 
 ## How to run the tests
@@ -80,12 +89,6 @@ The project uses jasmine to test the code base, the tests can be run through the
 
 ```
 $ jasmine
-```
-
-To include the test coverage, run the following command:
-
-```
-TO-DO
 ```
 
 ### Tech stack
@@ -102,12 +105,12 @@ The application was written in javascript, with Jasmine as the testing framework
 - Transactions have a date, an amount and a balance
 
 **Withdraw function**  
-- Accepts two arguments: date and amount   
+- Accepts one arguments: amount   
 - Adds transaction to the transactionHistory array
 - Updates the balance
 
 **Deposit function**  
-- Accepts two arguments: date and amount   
+- Accepts one arguments: amount      
 - Adds transaction to the transactionHistory array
 - Updates the balance
 

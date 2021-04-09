@@ -90,7 +90,7 @@ describe("Account", function() {
     it("a mix of deposits and withdrawals can be added to the bank statement", function(){
       account.deposit(8517.22);
       account.withdraw(2399.78);
-      expect(account.printStatement()).toEqual(`date || credit || debit || balance\n${testDate()} || || 2399.78 || 6117.44\n07/04/2021 || 8517.22 || || 8517.22\n`);
+      expect(account.printStatement()).toEqual(`date || credit || debit || balance\n${testDate()} || || 2399.78 || 6117.44\n${testDate()} || 8517.22 || || 8517.22\n`);
     })
 
   })

@@ -23,16 +23,10 @@ class Account {
   }
 
   printStatement() {
-    let reversedHistory = this._transactionHistory.reverse();
     console.log("IN PRINT STATEMENT");
-    console.log(reversedHistory);
-    return new PrintStatement(reversedHistory)
+    let statement = new PrintStatement(this._transactionHistory)
+    return statement.result
   }
-
-  // printAccountStatement() {
-  //   let draftStatement = [this.statementHeader].concat(reversedHistory).join("");
-  //   return draftStatement;
-  // }
 
   _deductFromBalance(amount) {
     this.balance -= amount;

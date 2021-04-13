@@ -148,5 +148,3 @@ I considered a number of edge cases that I would like to test and implement in t
 ## Potential additional features
 
 Front-end user interface written in vanilla javascript
-
-Splitting the bank statement from the deposit/withdraw functions into a separate class, although currently I do not see much merit in doing this.

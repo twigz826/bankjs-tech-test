@@ -23,7 +23,6 @@ class Account {
   }
 
   printStatement() {
-    console.log("IN PRINT STATEMENT");
     let statement = new PrintStatement(this._transactionHistory)
     return statement.result
   }
